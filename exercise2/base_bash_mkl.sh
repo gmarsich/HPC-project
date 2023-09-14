@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Create a directory to store the results for this run
+# Create a directory to store the results
 results_dir="results_mkl"
 mkdir -p "$results_dir"
 
@@ -17,6 +17,10 @@ for ((run = 1; run <= num_runs; run++)); do
     # Loop through inputs and run the C program
     for ((input = start; input <= end; input += step)); do
         output=$(./gemm_mkl.x "$input" "$input" "$input" | tail -n 1 | grep ";")
-        echo "$output" >>"${results_dir}_${run}.txt"
+        echo "$output" >>"${results_dir}/${results_dir}_${run}.txt"
     done
 done
+
+
+
+# TODO: use the command date to create a new folder to store new results. The name of the folder should contain the date (day) and the time
