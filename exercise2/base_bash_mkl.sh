@@ -7,10 +7,10 @@ mkdir -p "$results_dir"
 # define the range of input values
 start=2000
 end=20000
-step=1000
+step=8000
 
 # Define the number of times to run the script
-num_runs=3
+num_runs=2
 
 # Loop for the specified number of runs
 for ((run = 1; run <= num_runs; run++)); do
