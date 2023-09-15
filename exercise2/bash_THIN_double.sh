@@ -12,7 +12,7 @@ end=20000
 step=1000
 
 # Define the number of times to repeat the test (then we will do the average on the runs)
-num_runs=6
+num_runs=7
 
 # Double loop to do more tests (a test is a run), each test is formed by results coming from different inputs
 for ((run = 1; run <= num_runs; run++)); do
