@@ -1,0 +1,15 @@
+What to do before running the bash script:
+
+THIN node:
+
+salloc --exclusive -n 12 -N1 -p THIN --time=2:0:0
+module load architecture/Intel
+module load mkl
+module load openBLAS/0.3.23-omp
+export OMP_PLACES=cores
+{
+    export OMP_PROC_BIND=spread
+        or
+    export OMP_PROC_BIND=close
+}
+srun -n1 make cpu
