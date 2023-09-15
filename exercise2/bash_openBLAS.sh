@@ -9,7 +9,7 @@ mkdir -p "$results_dir"
 # Define the range of input values
 start=2000
 end=20000
-step=2000
+step=1000
 
 # Define the number of times to repeat the test (then we will do the average on the runs)
 num_runs=3
