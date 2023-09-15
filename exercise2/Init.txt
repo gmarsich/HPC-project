@@ -13,3 +13,10 @@ export OMP_PLACES=cores
     export OMP_PROC_BIND=close
 }
 srun -n1 make cpu
+
+
+
+To make a .sh executable: chmod +x your_script.sh
+To remove a file: rm file
+To remove a folder: rm -rf
+To change the name of a file: mv oldname newname
