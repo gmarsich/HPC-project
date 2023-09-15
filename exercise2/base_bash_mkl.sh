@@ -1,7 +1,9 @@
 #!/bin/bash
 
 # Create a directory to store the results
-results_dir="results_mkl"
+day=$(date '+%Y-%m-%d')
+time=$(date '+%T')
+results_dir="results_mkl_${day}_${time}"
 mkdir -p "$results_dir"
 
 # define the range of input values
@@ -10,7 +12,7 @@ end=20000
 step=8000
 
 # Define the number of times to run the script
-num_runs=2
+num_runs=3
 
 # Loop for the specified number of runs
 for ((run = 1; run <= num_runs; run++)); do
@@ -21,6 +23,3 @@ for ((run = 1; run <= num_runs; run++)); do
     done
 done
 
-
-
-# TODO: use the command date to create a new folder to store new results. The name of the folder should contain the date (day) and the time
