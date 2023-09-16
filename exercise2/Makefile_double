@@ -6,7 +6,7 @@ MKL= -L${MKLROOT}/lib/intel64  -lmkl_intel_lp64 -lmkl_gnu_thread -lmkl_core -lgo
 ### OpenBLAS libraries 
 OPENBLASROOT=${OPENBLAS_ROOT}
 ### BLIS libraries
-BLISROOT=/u/dssc/gmarsi00/myblis/lib
+BLISROOT=/u/dssc/gmarsi00/myblis
 
 cpu: gemm_mkl.x gemm_oblas.x gemm_blis.x
 
