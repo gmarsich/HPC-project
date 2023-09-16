@@ -1,0 +1,67 @@
+import os
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from function_mean_matrix import mean_matrix
+
+
+matrix_single_spread_MKL = mean_matrix('/home/gaia/Documents/RESULTS/spread/single/MKL')
+matrix_single_spread_openBLAS = mean_matrix('/home/gaia/Documents/RESULTS/spread/single/OpenBLAS')
+matrix_single_spread_BLIS = mean_matrix('/home/gaia/Documents/RESULTS/spread/single/BLIS')
+
+matrix_single_close_MKL = mean_matrix('/home/gaia/Documents/RESULTS/close/single/MKL')
+matrix_single_close_openBLAS = mean_matrix('/home/gaia/Documents/RESULTS/close/single/OpenBLAS')
+matrix_single_close_BLIS = mean_matrix('/home/gaia/Documents/RESULTS/close/single/BLIS')
+
+
+matrix_double_spread_MKL = mean_matrix('/home/gaia/Documents/RESULTS/spread/double/MKL')
+matrix_double_spread_openBLAS = mean_matrix('/home/gaia/Documents/RESULTS/spread/double/OpenBLAS')
+matrix_double_spread_BLIS = mean_matrix('/home/gaia/Documents/RESULTS/spread/double/BLIS')
+
+matrix_double_close_MKL = mean_matrix('/home/gaia/Documents/RESULTS/close/double/MKL')
+matrix_double_close_openBLAS = mean_matrix('/home/gaia/Documents/RESULTS/close/double/OpenBLAS')
+matrix_double_close_BLIS = mean_matrix('/home/gaia/Documents/RESULTS/close/double/BLIS')
+
+
+# Plot of GFLOPS
+# TODO: markersize
+# TODO: insert value of the peak
+# TODO : inserire legenda
+plt.plot(matrix_single_spread_MKL[:, 0], matrix_single_spread_MKL[:, 4], label='Data', color='blue', marker='o')
+plt.plot(matrix_single_spread_openBLAS[:, 0], matrix_single_spread_openBLAS[:, 4], label='Data', color='red', marker='x')
+plt.plot(matrix_single_spread_BLIS[:, 0], matrix_single_spread_BLIS[:, 4], label='Data', color='green', marker='2')
+plt.plot(matrix_single_close_MKL[:, 0], matrix_single_close_MKL[:, 4], label='Data', color='pink', marker='D')
+plt.plot(matrix_single_close_openBLAS[:, 0], matrix_single_close_openBLAS[:, 4], label='Data', color='black', marker='*')
+plt.plot(matrix_single_close_BLIS[:, 0], matrix_single_close_BLIS[:, 4], label='Data', color='purple', marker='s')
+
+plt.grid(True, linestyle='--', color='gray')
+plt.xlabel('Size of the input')
+plt.ylabel('GFLOPS')
+plt.title("GEMM calculation with increasing input size")
+plt.show()
+
+
+
+
+
+
+# Plot of GFLOPS
+# TODO: markersize
+# TODO: insert value of the peak
+# TODO : inserire legenda
+plt.plot(matrix_double_spread_MKL[:, 0], matrix_double_spread_MKL[:, 3], label='Data', color='blue', marker='o')
+plt.plot(matrix_double_spread_openBLAS[:, 0], matrix_double_spread_openBLAS[:, 3], label='Data', color='red', marker='x')
+plt.plot(matrix_double_spread_BLIS[:, 0], matrix_double_spread_BLIS[:, 3], label='Data', color='green', marker='2')
+plt.plot(matrix_double_close_MKL[:, 0], matrix_double_close_MKL[:, 3], label='Data', color='pink', marker='D')
+plt.plot(matrix_double_close_openBLAS[:, 0], matrix_double_close_openBLAS[:, 3], label='Data', color='black', marker='*')
+plt.plot(matrix_double_close_BLIS[:, 0], matrix_double_close_BLIS[:, 3], label='Data', color='purple', marker='s')
+
+plt.grid(True, linestyle='--', color='gray')
+plt.xlabel('Size of the input')
+plt.ylabel('GFLOPS')
+plt.title("GEMM calculation with increasing input size")
+plt.show()
+
+
+
+

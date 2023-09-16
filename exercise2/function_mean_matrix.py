@@ -26,5 +26,5 @@ def mean_matrix(csv_directory):
 
     # get the matrix containing the means across the tests
     mean_matrix = np.mean(matrix, axis=0) # OBS.: the first three columns, containing the values of M, N and K, are "left untouched" by the mean operation since across axis 0 they are all equal
-    print(mean_matrix)
+    return mean_matrix
     
