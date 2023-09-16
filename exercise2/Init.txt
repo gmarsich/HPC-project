@@ -12,7 +12,14 @@ export OMP_PLACES=cores
         or
     export OMP_PROC_BIND=close
 }
+{
+    If use BLIS:
+    export BLIS_NUM_THREADS=12
+    export LD_LIBRARY_PATH=/u/dssc/gmarsi00/myblis/lib:$LD_LIBRARY_PATH
+}
 srun -n1 make cpu
+
+
 
 
 
