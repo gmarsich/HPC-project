@@ -22,5 +22,7 @@ for ((run = 1; run <= num_runs; run++)); do
         echo "$output_mkl" >>"${results_dir}/${results_dir}_mkl_${run}.csv"
         output_openBLAS=$(srun -n1 --cpus-per-task=12 ./gemm_oblas.x "$input" "$input" "$input" | tail -n 1 | grep ",")
         echo "$output_openBLAS" >>"${results_dir}/${results_dir}_openBLAS_${run}.csv"
+        output_BLIS=$(srun -n1 --cpus-per-task=12 ./gemm_blis.x "$input" "$input" "$input" | tail -n 1 | grep ",")
+        echo "$output_BLIS" >>"${results_dir}/${results_dir}_BLIS_${run}.csv"
     done
 done

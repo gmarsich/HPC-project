@@ -18,6 +18,10 @@ num_runs=7
 for ((run = 1; run <= num_runs; run++)); do
     # Loop through inputs and run the C program
     for ((input = start; input <= end; input += step)); do
+        output_mkl=$(srun -n1 --cpus-per-task=12 ./gemm_mkl.x "$input" "$input" "$input" | tail -n 1 | grep ",")
+        echo "$output_mkl" >>"${results_dir}/${results_dir}_mkl_${run}.csv"
+        output_openBLAS=$(srun -n1 --cpus-per-task=12 ./gemm_oblas.x "$input" "$input" "$input" | tail -n 1 | grep ",")
+        echo "$output_openBLAS" >>"${results_dir}/${results_dir}_openBLAS_${run}.csv"
         output_BLIS=$(srun -n1 --cpus-per-task=12 ./gemm_blis.x "$input" "$input" "$input" | tail -n 1 | grep ",")
         echo "$output_BLIS" >>"${results_dir}/${results_dir}_BLIS_${run}.csv"
     done
