@@ -23,7 +23,8 @@ matrix_double_close_BLIS = mean_matrix('/home/gaia/Documents/RESULTS/RESULTS_fix
 
 
 # Plot of GFLOPS
-# TODO: insert value of the peak
+fig, ax = plt.subplots()
+ax.axhline(y=1997, color='orange', linestyle='--', label='theoretical peak performance')
 plt.plot(matrix_single_spread_MKL[:, 0], matrix_single_spread_MKL[:, 4], label='spread, MKL', color='blue', marker='o')
 plt.plot(matrix_single_spread_openBLAS[:, 0], matrix_single_spread_openBLAS[:, 4], label='spread, OpenBLAS', color='red', marker='x')
 plt.plot(matrix_single_spread_BLIS[:, 0], matrix_single_spread_BLIS[:, 4], label='spread, BLIS', color='green', marker='2', markersize=10)
@@ -33,11 +34,12 @@ plt.plot(matrix_single_close_BLIS[:, 0], matrix_single_close_BLIS[:, 4], label='
 plt.legend(loc='lower right')
 plt.grid(True, linestyle='--', color='gray')
 plt.xlabel('Matrix size (value of M = N = K)')
-plt.ylabel('GFLOPS')
+plt.ylabel('GFLOPs')
 plt.title("GEMM calculation with increasing input size (THIN node, single precision)")
 plt.show()
 
-# TODO: insert value of the peak
+fig, ax = plt.subplots()
+ax.axhline(y=998.5, color='orange', linestyle='--', label='theoretical peak performance')
 plt.plot(matrix_double_spread_MKL[:, 0], matrix_double_spread_MKL[:, 4], label='spread, MKL', color='blue', marker='o')
 plt.plot(matrix_double_spread_openBLAS[:, 0], matrix_double_spread_openBLAS[:, 4], label='spread, OpenBLAS', color='red', marker='x')
 plt.plot(matrix_double_spread_BLIS[:, 0], matrix_double_spread_BLIS[:, 4], label='spread, BLIS', color='green', marker='2', markersize=10)
@@ -47,7 +49,7 @@ plt.plot(matrix_double_close_BLIS[:, 0], matrix_double_close_BLIS[:, 4], label='
 plt.legend(loc='lower right')
 plt.grid(True, linestyle='--', color='gray')
 plt.xlabel('Matrix size (value of M = N = K)')
-plt.ylabel('GFLOPS')
+plt.ylabel('GFLOPs')
 plt.title("GEMM calculation with increasing input size (THIN node, double precision)")
 plt.show()
 
