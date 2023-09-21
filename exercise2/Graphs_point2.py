@@ -51,7 +51,6 @@ plt.show()
 
 
 # Plot of GFLOPS
-# TODO: other to be added?
 plt.plot(matrix_single_spread_MKL[:, 0], matrix_single_spread_MKL[:, 5], label='spread, MKL', color='blue', marker='o')
 plt.plot(matrix_single_spread_openBLAS[:, 0], matrix_single_spread_openBLAS[:, 5], label='spread, OpenBLAS', color='red', marker='x')
 plt.plot(matrix_single_spread_BLIS[:, 0], matrix_single_spread_BLIS[:, 5], label='spread, BLIS', color='green', marker='2', markersize=10)
