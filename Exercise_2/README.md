@@ -46,5 +46,5 @@ For each of the eight executions we got 7 `.csv` files, i.e. 7 tests performed u
 
 Each leaf is a folder containing the set of the 7 tests, that will be averaged in the proper way to get the final result (which will be taken as the true one and plotted).
 
-We wrote some codes to be able to do this process of averaging and build the plot to represent the outcome in a significant way: programs and final plots are collected in the `Graphs` folder.
+We wrote some codes to be able to do this process of averaging and build the plot to represent the outcome in a significant way: programs and final plots (names and title in the images should be clear enough) are collected in the `Graphs` folder. `function_mean_matrix.py` is the Python code that contains the function that we used to compute the average across the tests (it receives as input the path of the folder containing the set of the `.csv` files to average and returns a NumPy matrix with the average values), `Graphs_point1.py` contains the code to plot the graphs regarding the scalability over the matrix size while `Graphs_point2.py` and `Graphs_speedup.py` contain the code to get the graphs regarding the scalability over the number of cores.
 
