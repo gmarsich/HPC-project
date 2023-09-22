@@ -28,7 +28,9 @@ Typing `srun -n1 make cpu` you will create the following files:
 
 ### Execution
 Now that you got the executable files, you can run them. For example:
+
 `srun -n 1 --cpus-per-task=12 ./gemm_oblas.x <value_of_M> <value_of_K> <value_of_N>`
+
 where you have to set the values of `<value_of_M>`, `<value_of_K>` and `<value_of_N>`, runs `gemm_oblas.x` using `--cpus-per-task=12`.
 
 The bash scripts have been written to get the results we needed through automatization, therefore making less efforts:
@@ -37,7 +39,7 @@ The bash scripts have been written to get the results we needed through automati
 3. bash_THIN_single_point1.sh: to collect the results regarding the scalability over the input size, considering single precision. The results will be placed in a folder whose name begins with `results_THIN_single`
 4. bash_THIN_single_point2.sh: to collect the results regarding the scalability over the number of cores, considering single precision. The results will be placed in a folder whose name begins with `results_THIN_pt2_single`
 
-Remark that the bash scripts should be run manually one after the other. Since we decided to test both with `export OMP_PROC_BIND=spread` and `export OMP_PROC_BIND=close`, the total executions will be eight (two per bash script).
+Remark that the bash scripts should be run manually one after the other. Since we decided to test both with `export OMP_PROC_BIND=spread` and `export OMP_PROC_BIND=close`, the amount of the total executions will be eight (two per bash script).
 
 ### Data generated
 For each of the eight executions we got 7 `.csv` files, i.e. 7 tests performed using equal values and conditions. At the end of our data gathering we reorganised the files and the folders to get a structure like this:
