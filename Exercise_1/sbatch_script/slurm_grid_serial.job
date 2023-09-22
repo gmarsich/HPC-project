@@ -1,0 +1,23 @@
+#!/bin/bash
+## Name of the Job
+#SBATCH -J MPI_serial
+##Directory containing the stndard output  
+#SBATCH --output=./output_job.out 
+## Partirion
+#SBATCH -p EPYC
+## Time required by the job 
+#SBATCH --time=120
+## Number of nodes
+#SBATCH -N 1
+##Number of core per node
+#SBATCH --tasks-per-node=1
+module load openMPI/4.1.5/gnu/12.2.1
+
+for i in  {5000..15000..5000}
+do 
+./game_of_life.x -i -k $i -f setup.pgm
+export OMP_NUM_THREADS=1
+mpirun  -np 1 --display-map --map-by socket  ./game_of_life.x -r -n 100 -f setup.pgm 
+mv data.txt data_serial_$i.txt 
+done
+

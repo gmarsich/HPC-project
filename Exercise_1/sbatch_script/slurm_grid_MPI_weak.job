@@ -1,0 +1,24 @@
+#!/bin/bash
+## Name of the Job
+#SBATCH -J MPI_weak  
+##Directory containing the standard output 
+#SBATCH --output=./output_job.out 
+## Partirion
+#SBATCH -p EPYC
+## Time required by the job 
+#SBATCH --time=120
+## Number of nodes
+#SBATCH -N 1
+##Number of core per node
+#SBATCH --tasks-per-node=128
+module load openMPI/4.1.5/gnu/12.2.1
+process=1
+for i in 5000 7071 8660 10000 11180 12247 13228 14142 15000
+do
+./game_of_life.x -i -k $i  -f setup.pgm
+export OMP_NUM_THREADS=1
+mpirun  -np $process --display-map --map-by core --report-bindings  ./game_of_life.x -r -n 100 -f setup.pgm 
+((process+=1))
+done
+
+mv data.txt data/data_weakMPI.txt
