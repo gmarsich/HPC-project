@@ -11,7 +11,7 @@ The content of this folder is the following:
 | sbatch_script| Folder containing the sbatch scripts |
 
 ### Compilation of the program 
-To compile the program ensure first to have downloaded the gcc and mpicc compilers (on ORFEO load the compilers with the command `module load openMPI/4.1.5/gnu/12.2.1`). If someone wish to change compilers remember to change them into the Make file. 
+To compile the program first ensure to have downloaded the gcc and mpicc compilers (on ORFEO load the compilers with the command `module load openMPI/4.1.5/gnu/12.2.1`). If someone wish to change compilers remember to change them into the Make file. 
 
 To run the compilation just use the command `make` inside the Files folder. 
 
