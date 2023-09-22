@@ -1,6 +1,4 @@
-# 2022 Final project Foundation of High Performance Computing
-### Group: Enrico Malcapi Gaia Marsich
-## Exercise 1 Repository
+## Exercise 1
 This is the folder containing all the files regarding the Exercise 1 for the final project of HPC. 
 
 
