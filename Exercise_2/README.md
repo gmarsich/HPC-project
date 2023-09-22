@@ -5,9 +5,13 @@ This is the folder containing all the files regarding the Exercise 2 for the fin
 The content of this folder is the following: 
 | Item      | Description |
 | :---        |    :----:   |
-| Graphs      | Folder containing all the files needed for the compilation       |
-| RESULTS   | Folder containing some initial configurations used to check the correctness of the program|
-|bash_scripts | Folder containing all the data generated during the scalability studies | 
+| Graphs      | Folder containing the programs used to create the graphs and the plots that we obtained      |
+| RESULTS   | Folder containing, by the means of a structure of nested folders, the results we collected from the execution of the tests|
+|bash_scripts | Folder containing the four bash scripts we used to automate the process of collecting the results | 
+|Makefile_double | File, a Makefile to generate the executables from `gemm_MOD.c`, having double precision| 
+|Makefile_single | File, a Makefile to generate the executables from `gemm_MOD.c`, having single precision| 
+|gemm_MOD.c | File, the level 3 BLAS function from which we collected the results | 
+
 
 ### Compilation of the program 
 To compile the program ensure first to have downloaded the gcc and mpicc compilers (on ORFEO load the compilers with the command `module load openMPI/4.1.5/gnu/12.2.1`). If someone wish to change compilers remember to change them into the Make file. 
