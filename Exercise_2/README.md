@@ -40,6 +40,10 @@ Remark that the bash scripts should be run manually one after the other. Since w
 ### Data generated
 For each of the eight executions we got 7 `.csv` files, i.e. 7 tests performed using equal values and conditions. At the end of our data gathering we reorganised the files and the folders to get a structure like this:
 
+<p align="center">
+<img src="/Exercise_2/RESULTS/folders.png" alt="Structure" width="500"/>
+</p>
+
 Each leaf is a folder containing the set of the 7 tests, that will be averaged in the proper way to get the final result (which will be taken as the true one and plotted).
 
 We wrote some codes to be able to do this process of averaging and build the plot to represent the outcome in a significant way: programs and final plots are collected in the `Graphs` folder.
