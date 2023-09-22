@@ -30,16 +30,18 @@ Now that you got the executable files, you can run them. For example:
 where you have to set the values of `<value_of_M>`, `<value_of_K>` and `<value_of_N>`, runs `gemm_oblas.x` using `--cpus-per-task=12`.
 
 The bash scripts have been written to get the results we needed through automatization, therefore making less efforts:
-1. bash_THIN_double_point1.sh: to collect the results regarding the scalability over the input size, considering double precision. They will be placed in a folder whose name begins with `results_THIN_double`
-2. bash_THIN_double_point2.sh: to collect the results regarding the scalability over the number of cores, considering double precision. They will be placed in a folder whose name begins with `results_THIN_pt2_double`
-3. bash_THIN_single_point1.sh: to collect the results regarding the scalability over the input size, considering double precision. They will be placed in a folder whose name begins with `results_THIN_single`
-4. bash_THIN_single_point2.sh: to collect the results regarding the scalability over the number of cores, considering double precision. They will be placed in a folder whose name begins with `results_THIN_pt2_single`
+1. bash_THIN_double_point1.sh: to collect the results regarding the scalability over the input size, considering double precision. The results will be placed in a folder whose name begins with `results_THIN_double`
+2. bash_THIN_double_point2.sh: to collect the results regarding the scalability over the number of cores, considering double precision. The results will be placed in a folder whose name begins with `results_THIN_pt2_double`
+3. bash_THIN_single_point1.sh: to collect the results regarding the scalability over the input size, considering single precision. The results will be placed in a folder whose name begins with `results_THIN_single`
+4. bash_THIN_single_point2.sh: to collect the results regarding the scalability over the number of cores, considering single precision. The results will be placed in a folder whose name begins with `results_THIN_pt2_single`
 
+Remark that the bash scripts should be run manually one after the other. Since we decided to test both with `export OMP_PROC_BIND=spread` and `export OMP_PROC_BIND=close`, the total executions will be eight (two per bash script).
 
 ### Data generated
+For each of the eight executions we got 7 `.csv` files, i.e. 7 tests performed using equal values and conditions. At the end of our data gathering we reorganised the files and the folders to get a structure like this:
 
 
+Each leaf is a folder containing the set of the 7 tests, that will be averaged in the proper way to get the final result (which will be taken as the true one and plotted).
 
-### NOTE
-After collecting the data, we wrote some codes to be able to show in a significant way the results: programs and final plots are collected in the `Graphs` folder
+We wrote some codes to be able to do this process of averaging and build the plot to represent the outcome in a significant way: programs and final plots are collected in the `Graphs` folder.
 
