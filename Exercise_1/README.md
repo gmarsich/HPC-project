@@ -8,7 +8,7 @@ The content of this folder is the following:
 | Files      | Folder containing all the files needed for the compilation       |
 | check_set_ups   | Folder containing some initial configurations used to check the correctness of the program|
 |data | Folder containing all the data generated during the scalability studies | 
-| sbatch_script| Folder containing the sbatch scripts |
+| sbatch_script| Folder containing the batch scripts |
 
 ### Compilation of the program 
 To compile the program first ensure to have downloaded the gcc and mpicc compilers (on ORFEO load the compilers with the command `module load openMPI/4.1.5/gnu/12.2.1`). If someone wish to change compilers remember to change them into the Make file. 
@@ -63,8 +63,8 @@ The results of the evolution are instead saved on the folder results which is re
 
 The program will also print on the standard output some useful information like the option taken, the number of MPI processes and the number of OpenMP threads. 
 
-### Sbatch scripts
-The sbatch scripts can be used to generate the data required for the scalability studies. They can be found on the sbatch_script folder and can be used by moving them into the Files folder and running the command `sbatch <sbatch_script>`.  
+### Batch scripts
+The batch scripts can be used to generate the data required for the scalability studies. They can be found on the batch_script folder and can be used by moving them into the Files folder and running the command `sbatch <batch_script>`.  
 They are :
 - slurm_grid_openmp.job: used to produce the OpenMP scalability data
 - slurm_grid_MPI_strong.job: used to produce the strong MPI scalability data
